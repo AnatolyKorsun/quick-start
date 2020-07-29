@@ -5,30 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Placeholder title</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Modak&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Сюда будет всталена ссылка на файл стилей -->
     <!-- inject:css -->
     <!-- endinject -->
   </head>
 
   <body>
-    <section class="hero">
-      <header class="header">
-        <a href="#" class="logo"
-          ><img class="logo__pic" src="" alt="logo-img"
-        /></a>
-        <a href="mailto:simple@mail" class="main">
-          <div class="mail__title">Пол всем вопросам пишите на:</div>
-          <div class="mail__contant">simple@mail</div>
-        </a>
-      </header>
-      <div class="fade-slider">
-        <div class="fade-slider__item">
-          <h1 class="lined-text"></h1>
+    <div class="wrapper">
+      <section class="hero">
+        <header class="header">
+          <a href="#" class="logo"
+            ><img class="logo__pic" src="./images/coffee.png" alt="logo-img"
+          /></a>
+          <a href="mailto:simple@mail" class="main">
+            <div class="mail__title">Пол всем вопросам пишите на:</div>
+            <div class="mail__contant">simple@mail</div>
+          </a>
+        </header>
+        <div class="fade-slider__container">
+          <div class="fade-slider">
+            <div class="fade-slider__item">
+              <div class="fade-slider__text">
+                <h1 class="lined-text">
+                  <div class="lined-text__word">We can</div>
+                  <div class="lined-text__word">find 5 minutes</div>
+                  <div class="lined-text__word lined-text__word--color-yellow">
+                    of happiness
+                  </div>
+                  <div class="lined-text__word lined-text__word--color-yellow">
+                    in a hard day
+                  </div>
+                </h1>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section class="products">
+        <div class="container">
+          <ul class="filter">
+            <li class="filter__item">
+              <a href="" class="filter__link">Популярное</a>
+            </li>
+            <li class="filter__item">
+              <a href="" class="filter__link filter__link--active"
+                >Популярное</a
+              >
+            </li>
+            <li class="filter__item">
+              <a href="" class="filter__link">Популярное</a>
+            </li>
+            <li class="filter__item">
+              <a href="" class="filter__link">Популярное</a>
+            </li>
+          </ul>
+          <ul class="product__list">
+            <li class="product__item product__item--color-yellow">
+              <div class="product__price">
+                <div class="product__price-amount">1800</div>
+              </div>
+              <div class="product__content">
+                <img src="./images/coffee-1.jpg" alt="" class="product__img" />
+                <div class="product__desc">
+                  <div class="product__desc--text">
+                    Lorem ipsum dolor sit amet.
+                  </div>
+                  <a href="" class="product__btn">Подробнее</a>
+                </div>
+              </div>
+            </li>
+            <li class="product__item product__item--color-yellow">
+              <div class="product__price">
+                <div class="product__price-amount">1800</div>
+              </div>
+              <div class="product__content">
+                <img src="./images/coffee-2.jpg" alt="" class="product__img" />
+                <div class="product__desc">
+                  <div class="product__desc--text">
+                    Lorem ipsum dolor sit amet.
+                  </div>
+                  <a href="" class="product__btn">Подробнее</a>
+                </div>
+              </div>
+            </li>
+            <li
+              class="product__item product__item--size-double product__item--color-black"
+            >
+            <div class="product__price">
+              <div class="product__price-amount">1800</div>
+            </div>
+              <div class="product__content">
+                <img src="./images/coffee-3.jpg" alt="" class="product__img" />
+                <div class="product__desc">
+                  <div class="product__desc--text">
+                    Lorem ipsum dolor sit amet.
+                  </div>
+                  <a href="" class="product__btn">Подробнее</a>
+                </div>
+              </div>
+            </li>
+            <li class="product__item">
+              <div class="product__price">
+                <div class="product__price-amount">1800</div>
+              </div>
+              <div class="product__content">
+                <img src="./images/coffee-4.jpg" alt="" class="product__img" />
+                <div class="product__desc">
+                  <div class="product__desc--text">
+                    Lorem ipsum dolor sit amet.
+                  </div>
+                  <a href="" class="product__btn">Подробнее</a>
+                </div>
+              </div>
+            </li>
+            <li class="product__item">
+              <div class="product__price">
+                <div class="product__price-amount">1800</div>
+              </div>
+              <div class="product__content">
+                <img src="./images/coffee-5.jpg" alt="" class="product__img" />
+                <div class="product__desc">
+                  <div class="product__desc--text">
+                    Lorem ipsum dolor sit amet.
+                  </div>
+                  <a href="" class="product__btn">Подробнее</a>
+                </div>
+              </div>
+            </li>
+            <li class="product__item">
+              <div class="product__price">
+                <div class="product__price-amount">1800</div>
+              </div>
+              <div class="product__content">
+                <img src="./images/coffee-6.jpg" alt="" class="product__img" />
+                <div class="product__desc">
+                  <div class="product__desc--text">
+                    Lorem ipsum dolor sit amet.
+                  </div>
+                  <a href="" class="product__btn">Подробнее</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
     <!-- Сюда будет всталена ссылка на файл скриптов -->
     <!-- inject:js -->
     <!-- endinject -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
