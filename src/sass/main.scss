@@ -95,60 +95,78 @@ ul {
             }
         }
     }
-    .fade-slider__container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 75%;
-        height: 75%;
-        background: url(../images/woman-holding.jpg) center center / contain no-repeat;
 
-        .fade-slider {
+    .fade-slider {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &__container {
+            position: absolute;
+            width: 75%;
+            height: 75%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &__item {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            &__item {
-                // position: absolute;
-                // top: 15%;
-                // left: 15%;
-                font-weight: 900;
-                text-transform: uppercase;
-                font-size: 20px;
+            background: center center / contain no-repeat;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 20px;
+            transition: opacity 1s;
+            &--slide-first{
+                background-image: url(../images/woman-holding.jpg);
             }
-            &__text {
-                // fixation absolute text for reuse
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-150%, -100%);
-                .lined-text {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    line-height: 1;
-                    color: $white;
-                    font-size: 36px;
-                    text-transform: uppercase;
-                    &__word:nth-child(2n) {
-                        margin-left: 10px;
-                    }
-                    &__word {
+            &--slide-second{
+                background-image: url(../images/coffee-man.jpg);
+            }
+            &--slide-third{
+                background-image: url(../images/coffee-woman.jpg);
+            }
+            &--visible{
+                opacity: 1;
+            }
+        }
+        &__text {
+            // fixation absolute text for reuse
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-150%, -100%);
+            .lined-text {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                line-height: 1;
+                color: $white;
+                font-size: 36px;
+                text-transform: uppercase;
+                &__word:nth-child(2n) {
+                    margin-left: 10px;
+                }
+                &__word {
+                    background-color: $black;
+                    display: inline-block;
+                    &--color-yellow {
+                        color: $yellow;
                         background-color: $black;
-                        display: inline-block;
-                        &--color-yellow {
-                            color: $yellow;
-                            background-color: $black;
-                            line-height: 1;
-                        }
+                        line-height: 1;
                     }
                 }
             }
         }
     }
-    .sidebar{
+
+    .sidebar {
         position: absolute;
-        left:0;
-        top:0;
+        left: 0;
+        top: 0;
         bottom: 0;
         width: 75px;
         background: $black;
@@ -157,45 +175,50 @@ ul {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        &--opened{
-        width: 325px;
-        padding: 0 3% 0 4%;
+        transition: width 0.5s;
+        &--opened {
+            width: 325px;
+            padding: 0 3% 0 4%;
         }
-        &--opened .sidebar__header{
-        display: flex;
+        &--opened .sidebar__header {
+            display: flex;
         }
-        &--opened .sidebar{
+        &--opened .sidebar {
             position: absolute;
             width: 100%;
             text-align: center;
             width: 325px;
         }
-        &--opened .sidebar__menu{
+        &--opened .sidebar__menu {
             position: absolute;
-            left:0;
+            left: 0;
             width: 100%;
             text-align: center;
+            transition-delay: 0.7s;
         }
-        &__menu{
+        &__menu {
             position: absolute;
-            left:-400px;
+            left: -400px;
         }
-        &__hamburger{
+        &__hamburger {
             display: block;
             position: absolute;
             top: 27px;
-            left:50%;
+            left: 50%;
             transform: translateX(-50%);
         }
-        &--opened .sidebar__hamburger{
+        &--opened .sidebar__hamburger {
             display: none;
         }
-        &__hamburger-icon{
+        &__hamburger-icon {
             width: 30px;
             height: 30px;
-            fill:$yellow;
+            fill: $yellow;
+            &:hover {
+                fill: $red;
+            }
         }
-        &__header{
+        &__header {
             position: absolute;
             top: 20px;
             left: 0px;
@@ -203,33 +226,35 @@ ul {
             display: none;
             justify-content: center;
         }
-        &__close{
+        &__close {
             position: absolute;
             top: -23px;
             right: -1px;
+            cursor: pointer;
         }
-        &__close-icon{
+        &__close-icon {
             width: 30px;
             height: 30px;
             fill: $yellow;
-            &:hover{
-                fill:$red;
+            &:hover {
+                fill: $red;
             }
         }
-        .side-menu{
-            &__link{
+        .side-menu {
+            &__link {
                 font-size: 24px;
-                color:$yellow;
+                color: $yellow;
                 text-transform: uppercase;
                 font-family: $titleFont;
                 text-decoration: none;
-                &:hover{
-                    color:$red;
+                &:hover {
+                    color: $red;
                 }
             }
         }
     }
 }
+
 .products {
     margin-bottom: 160px;
     .filter {
@@ -237,8 +262,15 @@ ul {
         align-items: center;
         justify-content: center;
         margin-bottom: 100px;
-        &___item {
+        &__item {
             margin-right: 40px;
+            &--active .filter__link{
+                background-color: #000;
+                color: $yellow;
+                &:hover {
+                    color: $yellow;
+                }
+            }
         }
         &___item:last-child {
             margin-right: 0;
@@ -255,13 +287,7 @@ ul {
                 text-decoration: none;
                 color: $red;
             }
-            &--active {
-                background-color: #000;
-                color: $yellow;
-                &:hover {
-                    color: $yellow;
-                }
-            }
+         
         }
     }
 

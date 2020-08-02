@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Placeholder title</title>
+    <!-- Сюда будет всталена ссылка на файл стилей -->
+    <!-- inject:css -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -15,9 +17,6 @@
       href="https://fonts.googleapis.com/css2?family=Modak&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Сюда будет всталена ссылка на файл стилей -->
-    <!-- inject:css -->
     <!-- endinject -->
   </head>
 
@@ -34,8 +33,10 @@
           </a>
         </header>
         <div class="fade-slider__container">
-          <div class="fade-slider">
-            <div class="fade-slider__item">
+          <ul class="fade-slider">
+            <li
+              class="fade-slider__item fade-slider__item--slide-first fade-slider__item--visible"
+            >
               <div class="fade-slider__text">
                 <h1 class="lined-text">
                   <div class="lined-text__word">We can</div>
@@ -48,10 +49,38 @@
                   </div>
                 </h1>
               </div>
-            </div>
-          </div>
+            </li>
+            <li class="fade-slider__item fade-slider__item--slide-second">
+              <div class="fade-slider__text">
+                <h1 class="lined-text">
+                  <div class="lined-text__word">We can</div>
+                  <div class="lined-text__word">find 6 minutes</div>
+                  <div class="lined-text__word lined-text__word--color-yellow">
+                    of happiness
+                  </div>
+                  <div class="lined-text__word lined-text__word--color-yellow">
+                    in a hard day
+                  </div>
+                </h1>
+              </div>
+            </li>
+            <li class="fade-slider__item fade-slider__item--slide-third">
+              <div class="fade-slider__text">
+                <h1 class="lined-text">
+                  <div class="lined-text__word">We can</div>
+                  <div class="lined-text__word">find 7 minutes</div>
+                  <div class="lined-text__word lined-text__word--color-yellow">
+                    of happiness
+                  </div>
+                  <div class="lined-text__word lined-text__word--color-yellow">
+                    in a hard day
+                  </div>
+                </h1>
+              </div>
+            </li>
+          </ul>
         </div>
-        <aside class="sidebar sidebar--opened">
+        <aside class="sidebar">
           <a href="" class="sidebar__hamburger">
             <svg class="sidebar__hamburger-icon">
               <use xlink:href="./images/SVG-sprite.svg#menu"></use>
@@ -94,13 +123,11 @@
       <section class="products">
         <div class="container">
           <ul class="filter">
-            <li class="filter__item">
+            <li class="filter__item filter__item--active">
               <a href="" class="filter__link">Популярное</a>
             </li>
             <li class="filter__item">
-              <a href="" class="filter__link filter__link--active"
-                >Популярное</a
-              >
+              <a href="" class="filter__link">Популярное</a>
             </li>
             <li class="filter__item">
               <a href="" class="filter__link">Популярное</a>
@@ -327,14 +354,6 @@
                     <a href="" class="socials__link">
                       <svg class="socials__icon">
                         <!-- using svg sprite -->
-                        <use xlink:href="./images/SVG-sprite.svg#twitter"></use>
-                      </svg>
-                    </a>
-                  </li>
-                  <li class="socials__item">
-                    <a href="" class="socials__link">
-                      <svg class="socials__icon">
-                        <!-- using svg sprite -->
                         <use
                           xlink:href="./images/SVG-sprite.svg#linkedin"
                         ></use>
@@ -351,6 +370,14 @@
                       </svg>
                     </a>
                   </li>
+                  <li class="socials__item">
+                    <a href="" class="socials__link">
+                      <svg class="socials__icon">
+                        <!-- using svg sprite -->
+                        <use xlink:href="./images/SVG-sprite.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -361,11 +388,16 @@
 
     <!-- Сюда будет всталена ссылка на файл скриптов -->
     <!-- inject:js -->
-    <!-- endinject -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- library isotop for sortind -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/sidebar-menu.js"></script>
+    <script src="./js/fade-slider.js"></script>
+    <script src="./js/filter.js"></script>
+    <!-- endinject -->
   </body>
 </html>
