@@ -3,7 +3,8 @@
  */
 
 // @import "normalize.scss";
-// @import "base.scss";
+// @import "bootstrap.min.scss"
+@import "product.scss";
 
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Modak', cursive;
@@ -29,7 +30,9 @@ $titleFont: "Modak", cursive;
 html,
 body {
     height: 100%;
+    box-sizing: border-box;
 }
+
 body {
     font: 16px / 1.42 "Roboto", Arial, sans-serif;
     // font-size: 16px;
@@ -51,10 +54,10 @@ ul {
     overflow: hidden;
     min-width: 1320px;
 }
-.container {
-    margin: 0 auto;
-    max-width: 1320px;
-}
+// .container {
+//     margin: 0 auto;
+//     max-width: 1320px;
+// }
 
 .hero {
     position: relative;
@@ -87,13 +90,17 @@ ul {
             text-decoration: none;
             text-align: center;
             font-size: 16px;
+            background:$black;
+            padding: 5px;
+            border-radius: 5px;
+
             &__title {
                 color: $yellow;
                 margin-bottom: 3px;
             }
             &__contant {
                 background-color: $black;
-                color: white;
+                color: $white;
             }
         }
     }

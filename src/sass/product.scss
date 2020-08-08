@@ -1,0 +1,144 @@
+// @import'main.scss'
+
+// $variable:white; use color:$variable
+$white: #fff;
+$yellow: #ffc92f;
+$red: #d82727;
+$black: #1b1b1b;
+$titleFont: "Modak", cursive;
+
+// %button{color:red;} use .button{@extend %button}
+
+.product{
+    &-header{
+    width: 100vw;
+    min-height: 175px;
+    background: url(../images/hero-pic.jpg) center center / cover no-repeat;
+    margin-bottom: 175px;
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-slider {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            bottom: 10%;
+            right: 0%;
+            background:url(../images/slider-pic.png) center center / contain no-repeat;
+            z-index: 100;
+            transform: rotate(-20deg);
+        }
+        &__container {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &__item {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: center center / contain no-repeat;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 20px;
+            transition: opacity 1s;
+            &--slide-first{
+                background-image: url(../images/slide-first.jpg);
+            }
+            &--slide-second{
+                background-image: url(../images/slide-second.jpg);
+            }
+            &--slide-third{
+                background-image: url(../images/slide-third.jpg);
+            }
+            &--slide-fourth{
+                background-image: url(../images/slide-fourth.jpg);
+            }
+            &--visible{
+                opacity: 1;
+            }
+        }
+        &__text {
+            // fixation absolute text for reuse
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-150%, -100%);
+            .lined-text {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                line-height: 1;
+                color: $white;
+                font-size: 10px;
+                text-transform: uppercase;
+                &__word:nth-child(2n) {
+                    margin-left: 10px;
+                }
+                &__word {
+                    background-color: $black;
+                    display: inline-block;
+                    &--color-yellow {
+                        color: $yellow;
+                        background-color: $black;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+    }
+    }
+}
+.mail {
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    background:$black;
+    padding: 5px;
+    border-radius: 5px;
+
+    &__title {
+        color: $yellow;
+        margin-bottom: 3px;
+    }
+    &__contant {
+        background-color: $black;
+        color: $white;
+    }
+}
+
+// Small devices sm
+@media (max-width:767px){}
+
+// Small devices and Tablets md
+@media (min-width:768px){
+    .product-header{
+        &__container{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+
+// Medium devices and Desktop lg
+@media(min-width:992px){}
+
+// Large devices and Screens xl
+@media(min-width:1200px){}
+
+

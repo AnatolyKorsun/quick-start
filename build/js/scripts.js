@@ -70,7 +70,21 @@ node.removeChild(alreadyProcessedPseudoElement);}var meta=blankMeta();var extra=
     }
 
     slides[ind].classList.add(activeClass);
-  }, 5000);
+  }, 5000); // header slider
+
+  var slide = document.querySelectorAll(".header-slider__item");
+  var activeCls = 'header-slider__item--visible';
+  var index = 0;
+  setInterval(function () {
+    slide[index].classList.remove(activeCls);
+    index++;
+
+    if (index + 1 > slide.length) {
+      index = 0;
+    }
+
+    slide[index].classList.add(activeCls);
+  }, 4000);
 })();
 "use strict";
 

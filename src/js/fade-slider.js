@@ -12,4 +12,19 @@
         slides[ind].classList.add(activeClass);
         
     }, 5000)
+
+    // header slider
+    const slide = document.querySelectorAll(".header-slider__item");
+    const activeCls = 'header-slider__item--visible';
+    let index = 0;
+
+    setInterval(function(){
+        slide[index].classList.remove(activeCls);
+        index++;
+        if(index +1 > slide.length){
+            index=0;
+        }
+        slide[index].classList.add(activeCls);
+        
+    }, 4000)
 }())
