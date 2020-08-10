@@ -6,109 +6,111 @@ $yellow: #ffc92f;
 $red: #d82727;
 $black: #1b1b1b;
 $titleFont: "Modak", cursive;
+$grey:#808080;
+
 
 // %button{color:red;} use .button{@extend %button}
 
-.product{
-    &-header{
-    width: 100vw;
-    min-height: 175px;
-    background: url(../images/hero-pic.jpg) center center / cover no-repeat;
-    margin-bottom: 175px;
+.product {
+    &-header {
+        width: 100vw;
+        min-height: 175px;
+        background: url(../images/hero-pic.jpg) center center / cover no-repeat;
+        margin-bottom: 175px;
 
-    &__container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .header-slider {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 50%;
-            height: 50%;
-            bottom: 10%;
-            right: 0%;
-            background:url(../images/slider-pic.png) center center / contain no-repeat;
-            z-index: 100;
-            transform: rotate(-20deg);
-        }
         &__container {
-            position: absolute;
-            width: 90%;
-            height: 90%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        &__item {
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
+        .header-slider {
             width: 100%;
             height: 100%;
-            background: center center / contain no-repeat;
-            font-weight: 900;
-            text-transform: uppercase;
-            font-size: 20px;
-            transition: opacity 1s;
-            &--slide-first{
-                background-image: url(../images/slide-first.jpg);
+            position: relative;
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 50%;
+                height: 50%;
+                bottom: 10%;
+                right: 0%;
+                background: url(../images/slider-pic.png) center center / contain no-repeat;
+                z-index: 100;
+                transform: rotate(-20deg);
             }
-            &--slide-second{
-                background-image: url(../images/slide-second.jpg);
+            &__container {
+                position: absolute;
+                width: 90%;
+                height: 90%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
-            &--slide-third{
-                background-image: url(../images/slide-third.jpg);
-            }
-            &--slide-fourth{
-                background-image: url(../images/slide-fourth.jpg);
-            }
-            &--visible{
-                opacity: 1;
-            }
-        }
-        &__text {
-            // fixation absolute text for reuse
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-150%, -100%);
-            .lined-text {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                line-height: 1;
-                color: $white;
-                font-size: 10px;
+            &__item {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: center center / contain no-repeat;
+                font-weight: 900;
                 text-transform: uppercase;
-                &__word:nth-child(2n) {
-                    margin-left: 10px;
+                font-size: 20px;
+                transition: opacity 1s;
+                &--slide-first {
+                    background-image: url(../images/slide-first.jpg);
                 }
-                &__word {
-                    background-color: $black;
-                    display: inline-block;
-                    &--color-yellow {
-                        color: $yellow;
+                &--slide-second {
+                    background-image: url(../images/slide-second.jpg);
+                }
+                &--slide-third {
+                    background-image: url(../images/slide-third.jpg);
+                }
+                &--slide-fourth {
+                    background-image: url(../images/slide-fourth.jpg);
+                }
+                &--visible {
+                    opacity: 1;
+                }
+            }
+            &__text {
+                // fixation absolute text for reuse
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-150%, -100%);
+                .lined-text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    line-height: 1;
+                    color: $white;
+                    font-size: 10px;
+                    text-transform: uppercase;
+                    &__word:nth-child(2n) {
+                        margin-left: 10px;
+                    }
+                    &__word {
                         background-color: $black;
-                        line-height: 1;
+                        display: inline-block;
+                        &--color-yellow {
+                            color: $yellow;
+                            background-color: $black;
+                            line-height: 1;
+                        }
                     }
                 }
             }
         }
-    }
     }
 }
 .mail {
     text-decoration: none;
     text-align: center;
     font-size: 16px;
-    background:$black;
+    background: $black;
     padding: 5px;
     border-radius: 5px;
 
@@ -122,13 +124,119 @@ $titleFont: "Modak", cursive;
     }
 }
 
-// Small devices sm
-@media (max-width:767px){}
+.product-choice{
+    // height: 600px;
+    background-color: $yellow;
+    display: flex;
+    margin-bottom: 90px;
+    border: 15px solid $yellow;
+    &__pic{
+        flex:1;
+        margin-left: 10px;
+        height: 100%;
+        justify-content: space-between;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__img {
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+    }
+    &__list{
+        // position: relative;
+        flex:1;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &__item{
+        width: 100%;
+        padding: 40px;
+        border-bottom: 1px solid $grey;
+        &:last-child{
+            border:0;
+        }
+    }
+    &__capt{
+        text-transform: uppercase;
+        font-size: 40px;
+        font-family: $titleFont;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+    &__price{
+        // position: absolute;
+        left: -15px;
+        top: 70px;
+        width: 160px;
+        border-bottom: 43px solid $black;
+        border-left: 5px solid transparent;
+        border-right: 2px solid transparent;
+        transform: rotate(-182deg);
+    }
+    &__price-amount {
+        font-size: 30px;
+        font-weight: bold;
+        color: $white;
+        transform: rotate(185deg);
+        position: absolute;
+        top: 0;
+        right: 25px;
+    }
+    &__btn{
+        text-transform: uppercase;
+        font-size: 25px;
+        color:$white;
+        font-weight: bold;
+        font-family: $titleFont;
+        display: inline-block;
+        padding: 15px 70px;
+        background-color: $red;
+        &:hover{
+            color:$yellow;
+            cursor: pointer;
+        }
+    }
+    &__filter{
+        height: 50px;
+        margin-bottom: 30px;
+        &-item{
+            display: inline-block;
+            margin-right: 10px;
+            width: 50px;
+            height: 100%;
+            border:1px solid $grey;
+            border-radius: 3px;
+            font-size: 26px;
+            font-weight: bold;
+            line-height: 50px;
+            text-align: center;
+            vertical-align: center;
+            &:last-child{
+                margin-right: 0;
+            }
+            &--active{
+                background-color: $yellow;
+                border-color: $yellow;
+            }
+        }
+    }
+
+}
+
+        // Small devices sm
+@media (max-width: 767px) {
+}
 
 // Small devices and Tablets md
-@media (min-width:768px){
-    .product-header{
-        &__container{
+@media (min-width: 768px) {
+    .product-header {
+        &__container {
             flex-direction: row;
             justify-content: space-between;
         }
@@ -136,9 +244,9 @@ $titleFont: "Modak", cursive;
 }
 
 // Medium devices and Desktop lg
-@media(min-width:992px){}
+@media (min-width: 992px) {
+}
 
 // Large devices and Screens xl
-@media(min-width:1200px){}
-
-
+@media (min-width: 1200px) {
+}
