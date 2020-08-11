@@ -6,8 +6,7 @@ $yellow: #ffc92f;
 $red: #d82727;
 $black: #1b1b1b;
 $titleFont: "Modak", cursive;
-$grey:#808080;
-
+$grey: #808080;
 
 // %button{color:red;} use .button{@extend %button}
 
@@ -124,14 +123,15 @@ $grey:#808080;
     }
 }
 
-.product-choice{
+.product-choice {
     // height: 600px;
     background-color: $yellow;
     display: flex;
+    flex-direction: column;
     margin-bottom: 90px;
     border: 15px solid $yellow;
-    &__pic{
-        flex:1;
+    &__pic {
+        flex: 1;
         margin-left: 10px;
         height: 100%;
         justify-content: space-between;
@@ -145,31 +145,31 @@ $grey:#808080;
         max-width: 90%;
         max-height: 90%;
     }
-    &__list{
+    &__list {
         // position: relative;
-        flex:1;
+        flex: 1;
         background-color: $white;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
     }
-    &__item{
+    &__item {
         width: 100%;
         padding: 40px;
         border-bottom: 1px solid $grey;
-        &:last-child{
-            border:0;
+        &:last-child {
+            border: 0;
         }
     }
-    &__capt{
+    &__capt {
         text-transform: uppercase;
         font-size: 40px;
         font-family: $titleFont;
         font-weight: bold;
         margin-bottom: 25px;
     }
-    &__price{
+    &__price {
         // position: absolute;
         left: -15px;
         top: 70px;
@@ -188,48 +188,96 @@ $grey:#808080;
         top: 0;
         right: 25px;
     }
-    &__btn{
+    &__btn {
         text-transform: uppercase;
         font-size: 25px;
-        color:$white;
+        color: $white;
         font-weight: bold;
         font-family: $titleFont;
-        display: inline-block;
+        // display: inline-block;
         padding: 15px 70px;
         background-color: $red;
-        &:hover{
-            color:$yellow;
+        margin-top: 25px;
+        text-align: center;
+        &:hover {
+            color: $yellow;
             cursor: pointer;
         }
     }
-    &__filter{
+    &__filter {
+        display: flex;
+        // flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
         height: 50px;
         margin-bottom: 30px;
-        &-item{
+        &-item {
             display: inline-block;
             margin-right: 10px;
             width: 50px;
             height: 100%;
-            border:1px solid $grey;
+            border: 1px solid $grey;
             border-radius: 3px;
             font-size: 26px;
             font-weight: bold;
             line-height: 50px;
             text-align: center;
             vertical-align: center;
-            &:last-child{
+            &:last-child {
                 margin-right: 0;
             }
-            &--active{
+            &--active {
                 background-color: $yellow;
                 border-color: $yellow;
             }
         }
     }
-
 }
 
-        // Small devices sm
+.products {
+    .filter {
+        flex-direction: column;
+        &__item {
+            margin-bottom: 25px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-spec {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 200px;
+        border: 12px solid $yellow;
+        &__list {
+            margin-bottom: 0;
+            padding: 15px;
+        }
+        &__item {
+            height: 20px;
+            margin-bottom: 24px;
+        }
+        &__icon {
+            width: 20px;
+            height: 20px;
+        }
+        &__desc {
+            display: inline-block;
+            margin-left: 27px;
+            font-size: 13px;
+        }
+        &__text {
+            padding: 40px;
+            border-top: 1px solid $grey;
+        }
+    }
+}
+
+// Small devices sm------------------------------------------------------------
 @media (max-width: 767px) {
 }
 
@@ -239,6 +287,61 @@ $grey:#808080;
         &__container {
             flex-direction: row;
             justify-content: space-between;
+        }
+    }
+    .product-choice {
+    flex-direction: row;
+    }
+
+    .products {
+        .filter {
+            flex-direction: row;
+            &__item {
+                margin-bottom: 0;
+            }
+        }
+
+        &-spec {
+            flex-direction: row;
+            // padding: 50px 32px;
+
+            &__list {
+                border-right: 1px solid $grey;
+                padding: 40px;
+            }
+            &__text {
+                width: 60%;
+                border: 0;
+            }
+        }
+    }
+    .footer {
+        .site-menu {
+            &-sections {
+                flex-direction: row !important;
+                margin-bottom: 0;
+            }
+            &__col {
+                margin-bottom: 0;
+            }
+        }
+
+        .extras {
+            flex-direction: row !important;
+            &__col {
+                margin-right: 20px;
+                flex: 1;
+                &:first-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .socials {
+                flex-direction: row !important;
+                &__item {
+                    margin-bottom: 0 !important;
+                }
+            }
         }
     }
 }

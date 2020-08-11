@@ -69,7 +69,7 @@ ul {
     // background-position: center center;
     // background-size: cover;
     // background-repeat: no-repeat;
-    
+
     .header {
         margin: 0 auto 0 auto;
 
@@ -84,13 +84,13 @@ ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .logo__img{
+        .logo__img {
         }
         .mail {
             text-decoration: none;
             text-align: center;
             font-size: 16px;
-            background:$black;
+            background: $black;
             padding: 5px;
             border-radius: 5px;
 
@@ -117,7 +117,7 @@ ul {
             height: 30%;
             bottom: 10%;
             right: 0%;
-            background:url(../images/slider-pic.png) center center / contain no-repeat;
+            background: url(../images/slider-pic.png) center center / contain no-repeat;
             z-index: 100;
             transform: rotate(-20deg);
         }
@@ -141,19 +141,19 @@ ul {
             text-transform: uppercase;
             font-size: 20px;
             transition: opacity 1s;
-            &--slide-first{
+            &--slide-first {
                 background-image: url(../images/slide-first.jpg);
             }
-            &--slide-second{
+            &--slide-second {
                 background-image: url(../images/slide-second.jpg);
             }
-            &--slide-third{
+            &--slide-third {
                 background-image: url(../images/slide-third.jpg);
             }
-            &--slide-fourth{
+            &--slide-fourth {
                 background-image: url(../images/slide-fourth.jpg);
             }
-            &--visible{
+            &--visible {
                 opacity: 1;
             }
         }
@@ -288,7 +288,7 @@ ul {
         margin-bottom: 100px;
         &__item {
             margin-right: 40px;
-            &--active .filter__link{
+            &--active .filter__link {
                 background-color: #000;
                 color: $yellow;
                 &:hover {
@@ -311,7 +311,6 @@ ul {
                 text-decoration: none;
                 color: $red;
             }
-         
         }
     }
 
@@ -513,6 +512,7 @@ ul {
         margin-bottom: 120px;
         &-sections {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             padding: 0 75px;
         }
@@ -521,6 +521,7 @@ ul {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: 25px;
         }
         &__col:last-child {
             margin-right: 0;
@@ -557,68 +558,79 @@ ul {
             }
         }
     }
-}
 
-.extras {
-    display: flex;
-    margin-bottom: 95px;
-    &__col {
-        margin-right: 20px;
-        //split columns proportionally
-        flex: 1;
-        &-socials {
-            text-align: center;
-            height: 100%;
-            background: url(../images/background-yellow.jpg) center center / cover no-repeat;
-        }
-    }
-    &__best {
-        text-align: center;
-        color: $white;
-        background: url(../images/background-black.jpg) center center / cover no-repeat;
-        font-size: 50px;
-        font-weight: bold;
-        // font-family: $titleFont;
-        padding: 39px;
-        display: block;
-        line-height: 1;
-        &:hover {
-            text-decoration: none;
-            color: $red;
-        }
-        &__col-social {
-            height: 100%;
-            display: flex;
-            text-align: center;
-            justify-content: center;
-        }
-    }
-    .socials {
+    .extras {
         display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: space-around;
-        align-items: center;
-        &__link {
-            width: 20px;
-            height: 20px;
-            &:hover .socials__icon {
-                fill: $red;
+        flex-direction: column;
+        // margin-bottom: 95px;
+        &__col {
+            //split columns proportionally
+            &-socials {
+                text-align: center;
+                height: 100%;
+                background: url(../images/background-yellow.jpg) center center / cover no-repeat;
+            }
+            &:first-child{
+                margin-bottom: 25px;
             }
         }
-        &__icon {
+
+        &__best {
+            text-align: center;
+            color: $white;
+            background: url(../images/background-black.jpg) center center / cover no-repeat;
+            font-size: 50px;
+            font-weight: bold;
+            // font-family: $titleFont;
+            padding: 39px;
+            display: block;
+            line-height: 1;
+            &:hover {
+                text-decoration: none;
+                color: $red;
+            }
+            &__col-social {
+                height: 100%;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+        .socials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
             height: 100%;
-            display: block;
-            fill: $black;
-        }
-        &__item {
-            width: 50px;
-            height: 50px;
-            margin-right: 38px;
-        }
-        &__item:last-child {
-            margin-right: 0;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+            &__link {
+                width: 20px;
+                height: 20px;
+                &:hover .socials__icon {
+                    fill: $red;
+                }
+            }
+            &__icon {
+                width: 100%;
+                height: 100%;
+                display: block;
+                fill: $black;
+            }
+            &__item {
+                width: 50px;
+                height: 50px;
+                // margin-right: 38px;
+                margin-bottom: 38px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+
+            }
+            &__item:last-child {
+                margin-right: 0;
+            }
         }
     }
 }
