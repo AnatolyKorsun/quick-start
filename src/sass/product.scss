@@ -5,7 +5,10 @@ $white: #fff;
 $yellow: #ffc92f;
 $red: #d82727;
 $black: #1b1b1b;
-$titleFont: "Modak", cursive;
+// font-family: 'Butcherman', cursive;
+// font-family: 'Freckle Face', cursive;
+$generalFont:'Butcherman', cursive;
+$titleFont: 'Freckle Face', cursive;
 $grey: #808080;
 
 // %button{color:red;} use .button{@extend %button}
@@ -18,34 +21,22 @@ $grey: #808080;
         margin-bottom: 175px;
 
         &__container {
+            padding: 25px 0;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             align-items: center;
+            .logo__pic{
+                margin-bottom: 25px;
+            }
         }
+
         .header-slider {
-            width: 100%;
-            height: 100%;
+            width: 55%;
+            min-width: 150px;
+            min-height: 200px;
             position: relative;
-            &:before {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 50%;
-                height: 50%;
-                bottom: 10%;
-                right: 0%;
-                background: url(../images/slider-pic.png) center center / contain no-repeat;
-                z-index: 100;
-                transform: rotate(-20deg);
-            }
-            &__container {
-                position: absolute;
-                width: 90%;
-                height: 90%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
+
             &__item {
                 opacity: 0;
                 position: absolute;
@@ -58,6 +49,7 @@ $grey: #808080;
                 text-transform: uppercase;
                 font-size: 20px;
                 transition: opacity 1s;
+
                 &--slide-first {
                     background-image: url(../images/slide-first.jpg);
                 }
@@ -74,13 +66,19 @@ $grey: #808080;
                     opacity: 1;
                 }
             }
+
             &__text {
                 // fixation absolute text for reuse
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-150%, -100%);
+                position: relative;
+                width: 100%;
+                height: 100%;
+
                 .lined-text {
+                    position: absolute;
+
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
@@ -94,6 +92,7 @@ $grey: #808080;
                     &__word {
                         background-color: $black;
                         display: inline-block;
+                        white-space: nowrap;
                         &--color-yellow {
                             color: $yellow;
                             background-color: $black;
@@ -103,23 +102,26 @@ $grey: #808080;
                 }
             }
         }
-    }
-}
-.mail {
-    text-decoration: none;
-    text-align: center;
-    font-size: 16px;
-    background: $black;
-    padding: 5px;
-    border-radius: 5px;
 
-    &__title {
-        color: $yellow;
-        margin-bottom: 3px;
-    }
-    &__contant {
-        background-color: $black;
-        color: $white;
+        .mail {
+            text-decoration: none;
+            text-align: center;
+            background: $black;
+            padding: 5px;
+            border-radius: 5px;
+            font-family: $titleFont;
+            font-size: 20px;
+
+            &__title {
+                color: $yellow;
+                margin-bottom: 3px;
+            }
+
+            &__contant {
+                background-color: $black;
+                color: $white;
+            }
+        }
     }
 }
 
@@ -158,6 +160,8 @@ $grey: #808080;
         width: 100%;
         padding: 40px;
         border-bottom: 1px solid $grey;
+        font-family: $titleFont;
+        font-size: 26px;
         &:last-child {
             border: 0;
         }
@@ -194,7 +198,6 @@ $grey: #808080;
         color: $white;
         font-weight: bold;
         font-family: $titleFont;
-        // display: inline-block;
         padding: 15px 70px;
         background-color: $red;
         margin-top: 25px;
@@ -287,10 +290,20 @@ $grey: #808080;
         &__container {
             flex-direction: row;
             justify-content: space-between;
+            .logo__pic{
+                margin-bottom: 0;
+            }
+        }
+        .header-slider__text{
+            .lined-text {
+                left: 80%;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
         }
     }
     .product-choice {
-    flex-direction: row;
+        flex-direction: row;
     }
 
     .products {
