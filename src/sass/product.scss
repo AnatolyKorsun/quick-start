@@ -5,14 +5,19 @@ $white: #fff;
 $yellow: #ffc92f;
 $red: #d82727;
 $black: #1b1b1b;
-// font-family: 'Butcherman', cursive;
-// font-family: 'Freckle Face', cursive;
-$generalFont:'Butcherman', cursive;
-$titleFont: 'Freckle Face', cursive;
 $grey: #808080;
+$mainBackground: #e8c7e2;
+$generalFont: "Chelsea Market", cursive;
+$titleFont: "Chilanka", cursive;
+$textFont: "Lemonada", cursive;
 
 // %button{color:red;} use .button{@extend %button}
 
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
 .product {
     &-header {
         width: 100vw;
@@ -26,7 +31,7 @@ $grey: #808080;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            .logo__pic{
+            .logo__pic {
                 margin-bottom: 25px;
             }
         }
@@ -75,16 +80,16 @@ $grey: #808080;
 
                 .lined-text {
                     position: absolute;
-
+                    font-family: $textFont;
                     top: 0;
                     left: 50%;
                     transform: translateX(-50%);
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
-                    line-height: 1;
+                    line-height: 1.2;
                     color: $white;
-                    font-size: 10px;
+                    font-size: 16px;
                     text-transform: uppercase;
                     &__word:nth-child(2n) {
                         margin-left: 10px;
@@ -127,11 +132,9 @@ $grey: #808080;
 
 .product-choice {
     // height: 600px;
-    background-color: $yellow;
     display: flex;
     flex-direction: column;
     margin-bottom: 90px;
-    border: 15px solid $yellow;
     &__pic {
         flex: 1;
         margin-left: 10px;
@@ -141,11 +144,12 @@ $grey: #808080;
         display: flex;
         justify-content: center;
         align-items: center;
+        background: url(../images/background-black.jpg) center center / cover no-repeat;
     }
     &__img {
-        display: block;
-        max-width: 90%;
-        max-height: 90%;
+        // display: block;
+        // max-width: 90%;
+        // max-height: 90%;
     }
     &__list {
         // position: relative;
@@ -155,26 +159,28 @@ $grey: #808080;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+        background-color: $mainBackground;
+        border: 10px solid $yellow;
     }
     &__item {
+        font-family: $textFont;
         width: 100%;
         padding: 40px;
         border-bottom: 1px solid $grey;
-        font-family: $titleFont;
         font-size: 26px;
         &:last-child {
             border: 0;
         }
     }
     &__capt {
+        font-family: $generalFont;
         text-transform: uppercase;
-        font-size: 40px;
-        font-family: $titleFont;
+        font-size: 45px;
         font-weight: bold;
         margin-bottom: 25px;
     }
     &__price {
-        // position: absolute;
+        font-family: $titleFont;
         left: -15px;
         top: 70px;
         width: 160px;
@@ -184,7 +190,7 @@ $grey: #808080;
         transform: rotate(-182deg);
     }
     &__price-amount {
-        font-size: 30px;
+        font-size: 35px;
         font-weight: bold;
         color: $white;
         transform: rotate(185deg);
@@ -194,10 +200,10 @@ $grey: #808080;
     }
     &__btn {
         text-transform: uppercase;
-        font-size: 25px;
+        font-size: 35px;
         color: $white;
         font-weight: bold;
-        font-family: $titleFont;
+        font-family: $generalFont;
         padding: 15px 70px;
         background-color: $red;
         margin-top: 25px;
@@ -209,21 +215,22 @@ $grey: #808080;
     }
     &__filter {
         display: flex;
-        // flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        height: 50px;
+        height: 60px;
         margin-bottom: 30px;
         &-item {
             display: inline-block;
             margin-right: 10px;
-            width: 50px;
+            width: 60px;
             height: 100%;
+            color: $black;
             border: 1px solid $grey;
             border-radius: 3px;
             font-size: 26px;
+            font-family: $generalFont;
             font-weight: bold;
-            line-height: 50px;
+            line-height: 60px;
             text-align: center;
             vertical-align: center;
             &:last-child {
@@ -232,6 +239,12 @@ $grey: #808080;
             &--active {
                 background-color: $yellow;
                 border-color: $yellow;
+            }
+            &:hover {
+                color: $red;
+                border-color: $red;
+                cursor: pointer;
+                text-decoration: none;
             }
         }
     }
@@ -244,6 +257,9 @@ $grey: #808080;
             margin-bottom: 25px;
             &:last-child {
                 margin-bottom: 0;
+            }
+            &__link {
+                background-color: $black;
             }
         }
     }
@@ -269,11 +285,13 @@ $grey: #808080;
             height: 20px;
         }
         &__desc {
+            font-family: $titleFont;
             display: inline-block;
             margin-left: 27px;
             font-size: 13px;
         }
         &__text {
+            font-family: $textFont;
             padding: 40px;
             border-top: 1px solid $grey;
         }
@@ -290,11 +308,11 @@ $grey: #808080;
         &__container {
             flex-direction: row;
             justify-content: space-between;
-            .logo__pic{
+            .logo__pic {
                 margin-bottom: 0;
             }
         }
-        .header-slider__text{
+        .header-slider__text {
             .lined-text {
                 left: 80%;
                 top: 50%;
@@ -335,13 +353,18 @@ $grey: #808080;
                 margin-bottom: 0;
             }
             &__col {
+                margin-right: 25px;
                 margin-bottom: 0;
+                &:last-child{
+                    margin-right: 0;
+                }
             }
         }
 
         .extras {
             flex-direction: row !important;
             &__col {
+                margin-bottom: 0 !important;
                 margin-right: 20px;
                 flex: 1;
                 &:first-child {

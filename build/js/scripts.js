@@ -90,10 +90,12 @@ node.removeChild(alreadyProcessedPseudoElement);}var meta=blankMeta();var extra=
 
 // filter menu highlight
 (function () {
+  // Isotope
   var elem = document.querySelector('.product__list');
   var iso = new Isotope(elem, {
     itemSelector: '.product__item'
-  });
+  }); // product-filter
+
   var controls = document.querySelectorAll('.filter__link');
   var activeClass = 'filter__item--active';
   controls.forEach(function (control) {
@@ -107,6 +109,18 @@ node.removeChild(alreadyProcessedPseudoElement);}var meta=blankMeta();var extra=
       iso.arrange({
         filter: ".".concat(filterName)
       });
+    });
+  }); // product-choice filter
+
+  var choiceControls = document.querySelectorAll('.product-choice__filter-item');
+  var choiceClassActive = 'product-choice__filter-item--active';
+  choiceControls.forEach(function (control) {
+    control.addEventListener('click', function (e) {
+      e.preventDefault();
+      choiceControls.forEach(function (link) {
+        link.classList.remove(choiceClassActive);
+      });
+      control.classList.add(choiceClassActive);
     });
   });
 })();
@@ -9581,6 +9595,36 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   return jQuery;
 });
+"use strict";
+
+// filter menu highlight
+(function () {
+  // product-filter
+  var controls = document.querySelectorAll('.filter__link');
+  var activeClass = 'filter__item--active';
+  controls.forEach(function (control) {
+    control.addEventListener('click', function (e) {
+      e.preventDefault();
+      var filterName = control.getAttribute('data-filter');
+      controls.forEach(function (link) {
+        link.closest('.filter__item').classList.remove(activeClass); //find parent for link with class ...
+      });
+      control.closest('.filter__item').classList.add(activeClass);
+    });
+  }); // product-choice filter
+
+  var choiceControls = document.querySelectorAll('.product-choice__filter-item');
+  var choiceClassActive = 'product-choice__filter-item--active';
+  choiceControls.forEach(function (control) {
+    control.addEventListener('click', function (e) {
+      e.preventDefault();
+      choiceControls.forEach(function (link) {
+        link.classList.remove(choiceClassActive);
+      });
+      control.classList.add(choiceClassActive);
+    });
+  });
+})();
 "use strict";
 
 (function () {

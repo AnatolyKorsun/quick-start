@@ -1,10 +1,12 @@
 // filter menu highlight
 (function () {
+  // Isotope
   const elem = document.querySelector('.product__list');
   const iso = new Isotope(elem, {
     itemSelector: '.product__item',
   });
 
+  // product-filter
   const controls = document.querySelectorAll('.filter__link');
   const activeClass = 'filter__item--active';
   controls.forEach(function (control) {
@@ -19,6 +21,19 @@
       iso.arrange({
           filter: `.${filterName}`
       })
+    });
+  });
+
+  // product-choice filter
+  const choiceControls = document.querySelectorAll('.product-choice__filter-item');
+  const choiceClassActive = 'product-choice__filter-item--active';
+  choiceControls.forEach(function (control) {
+  control.addEventListener('click', function (e) {
+    e.preventDefault();
+    choiceControls.forEach(function (link) {
+        link.classList.remove(choiceClassActive);
+      });
+      control.classList.add(choiceClassActive);
     });
   });
 })();
