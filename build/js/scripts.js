@@ -9597,36 +9597,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 });
 "use strict";
 
-// filter menu highlight
-(function () {
-  // product-filter
-  var controls = document.querySelectorAll('.filter__link');
-  var activeClass = 'filter__item--active';
-  controls.forEach(function (control) {
-    control.addEventListener('click', function (e) {
-      e.preventDefault();
-      var filterName = control.getAttribute('data-filter');
-      controls.forEach(function (link) {
-        link.closest('.filter__item').classList.remove(activeClass); //find parent for link with class ...
-      });
-      control.closest('.filter__item').classList.add(activeClass);
-    });
-  }); // product-choice filter
-
-  var choiceControls = document.querySelectorAll('.product-choice__filter-item');
-  var choiceClassActive = 'product-choice__filter-item--active';
-  choiceControls.forEach(function (control) {
-    control.addEventListener('click', function (e) {
-      e.preventDefault();
-      choiceControls.forEach(function (link) {
-        link.classList.remove(choiceClassActive);
-      });
-      control.classList.add(choiceClassActive);
-    });
-  });
-})();
-"use strict";
-
 (function () {
   var openingBtn = document.querySelector(".sidebar__hamburger");
   var closingBtn = document.querySelector(".sidebar__close");

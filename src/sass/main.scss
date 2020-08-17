@@ -1,11 +1,11 @@
 /*
  * Все паршалы импортировать в этот файл
  */
-
+// @import'main.scss'
 @import "normalize.scss";
-// @import "bootstrap.min.scss"
 @import "product.scss";
 
+// $variable:white; use color:$variable
 $white: #fff;
 $yellow: #ffc92f;
 $red: #d82727;
@@ -15,6 +15,14 @@ $mainBackground: #e8c7e2;
 $generalFont: "Chelsea Market", cursive;
 $titleFont: "Chilanka", cursive;
 $textFont: "Lemonada", cursive;
+
+// %button{color:red;} use .button{@extend %button}
+
+// general outline styles
+// btn{width; height; padding; margin;}
+
+// general design styles
+// btn-red{color; border; bgnd}
 
 %button {
     text-transform: uppercase;
@@ -45,18 +53,18 @@ body {
     -webkit-font-snoothing: antialiased;
     -moz-osx-font-snoothing: grayscale;
 }
-    ul {
-        margin: 0;
-        padding: 0;
-        & > li {
-            list-style: none;
-        }
+ul {
+    margin: 0;
+    padding: 0;
+    & > li {
+        list-style: none;
     }
-   
-    .wrapper {
-    overflow: hidden;
-    min-width: 1320px;
 }
+
+//     .wrapper {
+//     overflow: hidden;
+//     min-width: 1320px;
+// }
 // .container {
 //     margin: 0 auto;
 //     max-width: 1320px;
@@ -64,7 +72,7 @@ body {
 
 .hero {
     position: relative;
-    height: 100%;
+    // height: 100%;
     margin-bottom: 150px;
     min-height: 100vh;
     background: url(../images/hero-pic.jpg) center center / cover no-repeat;
@@ -74,20 +82,14 @@ body {
     // background-repeat: no-repeat;
 
     .header {
-        margin: 0 auto 0 auto;
-
-        // margin: 0 auto;
-
-        // margin-top: 0;
-        // margin-right: auto;
-        // margin-bottom: 0;
-        // margin-left: auto;
-
-        width: 1290px;
+        margin: 0 auto 25px auto;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: space-around;
         align-items: center;
-        .logo__img {
+        padding-top: 75px;
+        .logo {
+            // margin-bottom: 25px;
         }
         .mail {
             text-decoration: none;
@@ -110,36 +112,39 @@ body {
 
     .fade-slider {
         width: 100%;
-        height: 100%;
+        height: 90%;
         position: relative;
-        &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 30%;
-            height: 30%;
-            bottom: 10%;
-            right: 0%;
-            background: url(../images/slider-pic.png) center center / contain no-repeat;
-            z-index: 100;
-            transform: rotate(-20deg);
-        }
+
         &__container {
-            position: absolute;
-            width: 75%;
-            height: 75%;
+            position: relative;
+            width: 100%;
+            height: 600px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
+        // &:before {
+        //     content: "";
+        //     display: block;
+        //     position: absolute;
+        //     width: 100%;
+        //     top: 75px;
+        //     left:0;
+        //     // height: auto;
+        //     // bottom: 10%;
+        //     // right: 0%;
+        //     background: url(../images/slider-pic.png) center left / contain no-repeat;
+        //     z-index: 100;
+        //     transform: rotate(-20deg);
+        // }
+
         &__item {
-            opacity: 0;
+            // opacity: 0;
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 275px;
             width: 100%;
-            height: 100%;
-            background: center center / contain no-repeat;
+            min-height: 500px;
+            background: center left / contain no-repeat;
             font-weight: 900;
             text-transform: uppercase;
             font-size: 20px;
@@ -194,17 +199,17 @@ body {
         position: absolute;
         left: 0;
         top: 0;
-        bottom: 0;
-        width: 75px;
+        right: 0;
+        min-height: 75px;
         background: $black;
-        box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        transition: width 0.5s;
+        transition: width 0.7s;
         &--opened {
-            width: 325px;
+            width: 100%;
+            height: 100%;
             padding: 0 3% 0 4%;
         }
         &--opened .sidebar__header {
@@ -214,18 +219,14 @@ body {
             position: absolute;
             width: 100%;
             text-align: center;
-            width: 325px;
         }
         &--opened .sidebar__menu {
-            position: absolute;
-            left: 0;
-            width: 100%;
+            position: static;
             text-align: center;
-            transition-delay: 0.7s;
         }
         &__menu {
             position: absolute;
-            left: -400px;
+            left: -500px;
         }
         &__hamburger {
             display: block;
@@ -246,17 +247,12 @@ body {
             }
         }
         &__header {
-            position: absolute;
-            top: 20px;
-            left: 0px;
-            right: 0;
             display: none;
-            justify-content: center;
         }
         &__close {
             position: absolute;
-            top: -23px;
-            right: -1px;
+            top: 0px;
+            right: 0px;
             cursor: pointer;
         }
         &__close-icon {
@@ -289,19 +285,24 @@ body {
         align-items: center;
         justify-content: center;
         margin-bottom: 100px;
+
         &__item {
             margin-right: 40px;
+
             &--active .filter__link {
                 background-color: #000;
                 color: $yellow;
+
                 &:hover {
                     color: $yellow;
                 }
             }
         }
+
         &___item:last-child {
             margin-right: 0;
         }
+
         &__link {
             text-transform: uppercase;
             font-family: $generalFont;
@@ -312,6 +313,7 @@ body {
             display: inline-block;
             text-decoration: none;
             white-space: nowrap;
+            
             &:hover {
                 text-decoration: none;
                 color: $red;
@@ -324,25 +326,32 @@ body {
             display: flex;
             flex-wrap: wrap;
             margin-left: -27px;
+            justify-content: center;
         }
+
         &__item {
             width: 300px;
             height: 350px;
             background-color: $yellow;
             margin-bottom: 35px;
             margin-left: 27px;
+
             &--color-black {
                 background: url(../images/background-black.jpg) center center / cover no-repeat;
+
                 & .product__price {
                     border-bottom-color: $yellow;
+
                     &-amount {
                         color: $black;
                     }
                 }
             }
+
             &--color-yellow {
                 background: url(../images/background-yellow.jpg) center center / cover no-repeat;
             }
+            
             &--size-double {
                 width: 620px;
                 height: 544px;
@@ -360,6 +369,7 @@ body {
             border-left: 5px solid transparent;
             border-right: 2px solid transparent;
             transform: rotate(-182deg);
+            font-family: $generalFont;
         }
         &__price-amount {
             font-size: 30px;
@@ -398,7 +408,8 @@ body {
             right: 0;
             padding: 23px 35px;
             background: rgba($color: #000000, $alpha: 0.5);
-
+            font-family: $titleFont;
+            font-size: 22px;
             //start  hide description behind the visible part
             transform: translateY(100%);
             transition: transform 0.3s;
@@ -422,69 +433,70 @@ body {
         }
     }
 }
+
 .collections {
     margin-bottom: 135px;
+
     &__list {
         display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
+
     &__item {
+        margin-bottom: 25px;
         min-height: 474px;
         flex: 1;
         overflow: hidden;
-        margin-right: 30px;
-        background: url(../images/collections-pic-first.jpg) center center / cover no-repeat;
+        background: url(../images/collections-pic-first.jpg) center left / cover no-repeat;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
+
     &__item:nth-child(2n) {
-        background: url(../images/collections-pic-second.jpg) center center / cover no-repeat;
-        color: $white;
+        background: url(../images/collections-pic-second.jpg) center left / cover no-repeat;
+        color: $black;
         // size image
         // background: url(../images/background-black.jpg) center center / 200px;
     }
+
     &__item:last-child {
         margin-right: 0;
     }
+
     // start insert image into an before and its position
+
     &__item {
         position: relative;
     }
-    &__item:before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 40%;
-        height: 40%;
-        top: 20%;
-        left: 0%;
-        background: center center / contain no-repeat;
-    }
-    &__item--type-robusta:before {
-        background-image: url(../images/robusta.png);
-    }
-    &__item--type-arabica:before {
-        background-image: url(../images/arabica.png);
-    }
-    // end insert image into an before and its position
+
     &__link {
         display: block;
         padding: 74px 13% 74px 44%;
         text-decoration: none;
         color: inherit;
         height: 100%;
+        font-family: $textFont;
         // link to all block
         position: relative;
         box-sizing: border-box;
         height: 100%;
         // end link to all block
+
         &:hover %button {
             color: $white;
             text-decoration: none;
             background-color: $red;
         }
+
         &:hover {
             color: inherit;
             text-decoration: none;
         }
     }
+
     &__title {
         font-family: $titleFont;
         font-size: 70px;
@@ -493,9 +505,15 @@ body {
         text-transform: uppercase;
         margin-bottom: 11px;
     }
+
     &__desc {
+        font-family: $generalFont;
+        font-size: 25px;
         margin-bottom: 28px;
+        color:$black;
+        font-weight: bold;
     }
+
     &__btn {
         @extend %button;
         &--color-yellow {
@@ -542,7 +560,7 @@ body {
         }
         &__item {
             margin-bottom: 15px;
-            &:last-child{
+            &:last-child {
                 margin-bottom: 0;
             }
         }
@@ -573,7 +591,7 @@ body {
         flex-direction: column;
         &__col {
             margin-bottom: 25px;
-            &:last-child{
+            &:last-child {
                 margin-bottom: 0;
             }
             //split columns proportionally
@@ -582,7 +600,6 @@ body {
                 height: 100%;
                 background: url(../images/background-yellow.jpg) center center / cover no-repeat;
             }
-         
         }
 
         &__best {
@@ -634,14 +651,67 @@ body {
                 height: 50px;
                 // margin-right: 38px;
                 margin-bottom: 38px;
-                &:last-child{
+                &:last-child {
                     margin-bottom: 0;
                 }
-
             }
             &__item:last-child {
                 margin-right: 0;
             }
         }
     }
+}
+
+// Small devices sm
+@media (max-width: 767px) {
+}
+
+// Small devices and Tablets md
+@media (min-width: 768px) {
+    .hero {
+        padding-left: 75px;
+        .header {
+            padding-top: 10px;
+            flex-direction: row;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 75px;
+            transition-property: width;
+            transition-duration: 0.7s;
+
+            &--opened {
+                width: 350px;
+                height: 100%;
+                padding: 0 3% 0 4%;
+            }
+
+            &--opened .sidebar__menu {
+                transition-delay: 0.7s;
+            }
+        }
+    }
+}
+
+// Medium devices and Desktop lg
+@media (min-width: 992px) {
+    .collections {
+        &__list {
+            flex-direction: row;
+        }
+
+        &__item {
+            margin-bottom: 0;
+            margin-right: 30px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+// Large devices and Screens xl
+@media (min-width: 1200px) {
 }

@@ -13,6 +13,11 @@ $textFont: "Lemonada", cursive;
 
 // %button{color:red;} use .button{@extend %button}
 
+// general outline styles 
+// btn{width; height; padding; margin;}
+
+// general design styles
+// btn-red{color; border; bgnd}
 ol,
 ul {
     margin: 0;
@@ -298,7 +303,7 @@ ul {
     }
 }
 
-// Small devices sm------------------------------------------------------------
+// Small devices sm
 @media (max-width: 767px) {
 }
 
