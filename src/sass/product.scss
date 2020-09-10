@@ -18,6 +18,11 @@ $textFont: "Lemonada", cursive;
 
 // general design styles
 // btn-red{color; border; bgnd}
+
+// font-size in rem
+html {
+    font-size: 62.5%;
+}
 ol,
 ul {
     margin: 0;
@@ -26,25 +31,25 @@ ul {
 .product {
     &-header {
         width: 100vw;
-        min-height: 175px;
+        min-height: 17.5rem;
         background: url(../images/hero-pic.jpg) center center / cover no-repeat;
-        margin-bottom: 175px;
+        margin-bottom: 17.5rem;
 
         &__container {
-            padding: 25px 0;
+            padding: 2.5rem 0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             .logo__pic {
-                margin-bottom: 25px;
+                margin-bottom: 2.5rem;
             }
         }
 
         .header-slider {
             width: 55%;
-            min-width: 150px;
-            min-height: 200px;
+            min-width: 15rem;
+            min-height: 20rem;
             position: relative;
 
             &__item {
@@ -57,7 +62,7 @@ ul {
                 background: center center / contain no-repeat;
                 font-weight: 900;
                 text-transform: uppercase;
-                font-size: 20px;
+                font-size: 2rem;
                 transition: opacity 1s;
 
                 &--slide-first {
@@ -94,10 +99,10 @@ ul {
                     align-items: flex-start;
                     line-height: 1.2;
                     color: $white;
-                    font-size: 16px;
+                    font-size: 1.6rem;
                     text-transform: uppercase;
                     &__word:nth-child(2n) {
-                        margin-left: 10px;
+                        margin-left: 1rem;
                     }
                     &__word {
                         background-color: $black;
@@ -117,14 +122,14 @@ ul {
             text-decoration: none;
             text-align: center;
             background: $black;
-            padding: 5px;
-            border-radius: 5px;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
             font-family: $titleFont;
-            font-size: 20px;
+            font-size: 2rem;
 
             &__title {
                 color: $yellow;
-                margin-bottom: 3px;
+                margin-bottom: 0.3rem;
             }
 
             &__contant {
@@ -136,13 +141,12 @@ ul {
 }
 
 .product-choice {
-    // height: 600px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 90px;
+    margin-bottom: 9rem;
     &__pic {
         flex: 1;
-        margin-left: 10px;
+        margin-left: 1rem;
         height: 100%;
         justify-content: space-between;
         position: relative;
@@ -165,14 +169,14 @@ ul {
         justify-content: space-between;
         align-items: flex-start;
         background-color: $mainBackground;
-        border: 10px solid $yellow;
+        border: 1rem solid $yellow;
     }
     &__item {
         font-family: $textFont;
         width: 100%;
-        padding: 40px;
-        border-bottom: 1px solid $grey;
-        font-size: 26px;
+        padding: 4rem;
+        border-bottom: 0.1rem solid $grey;
+        font-size: 2.6rem;
         &:last-child {
             border: 0;
         }
@@ -180,38 +184,38 @@ ul {
     &__capt {
         font-family: $generalFont;
         text-transform: uppercase;
-        font-size: 45px;
+        font-size: 4.5rem;
         font-weight: bold;
-        margin-bottom: 25px;
+        margin-bottom: 2.5rem;
     }
     &__price {
         font-family: $titleFont;
-        left: -15px;
-        top: 70px;
-        width: 160px;
-        border-bottom: 43px solid $black;
-        border-left: 5px solid transparent;
-        border-right: 2px solid transparent;
+        left: -1.5rem;
+        top: 7rem;
+        width: 16rem;
+        border-bottom: 4.3rem solid $black;
+        border-left: 0.5rem solid transparent;
+        border-right: 0.2rem solid transparent;
         transform: rotate(-182deg);
     }
     &__price-amount {
-        font-size: 35px;
+        font-size: 3.5rem;
         font-weight: bold;
         color: $white;
         transform: rotate(185deg);
         position: absolute;
         top: 0;
-        right: 25px;
+        right: 2.5rem;
     }
     &__btn {
         text-transform: uppercase;
-        font-size: 35px;
+        font-size: 3.5rem;
         color: $white;
         font-weight: bold;
         font-family: $generalFont;
-        padding: 15px 70px;
+        padding: 1.5rem 7rem;
         background-color: $red;
-        margin-top: 25px;
+        margin-top: 2.5rem;
         text-align: center;
         &:hover {
             color: $yellow;
@@ -222,20 +226,20 @@ ul {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 60px;
-        margin-bottom: 30px;
+        height: 6rem;
+        margin-bottom: 3rem;
         &-item {
             display: inline-block;
-            margin-right: 10px;
-            width: 60px;
+            margin-right: 1rem;
+            width: 6rem;
             height: 100%;
             color: $black;
-            border: 1px solid $grey;
-            border-radius: 3px;
-            font-size: 26px;
+            border: 0.1rem solid $grey;
+            border-radius: 0.3rem;
+            font-size: 2.6rem;
             font-family: $generalFont;
             font-weight: bold;
-            line-height: 60px;
+            line-height: 6rem;
             text-align: center;
             vertical-align: center;
             &:last-child {
@@ -259,7 +263,7 @@ ul {
     .filter {
         flex-direction: column;
         &__item {
-            margin-bottom: 25px;
+            margin-bottom: 2.5rem;
             &:last-child {
                 margin-bottom: 0;
             }
@@ -275,30 +279,30 @@ ul {
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        min-height: 200px;
-        border: 12px solid $yellow;
+        min-height: 20rem;
+        border: 1.2rem solid $yellow;
         &__list {
             margin-bottom: 0;
-            padding: 15px;
+            padding: 1.5rem;
         }
         &__item {
-            height: 20px;
-            margin-bottom: 24px;
+            height: 2rem;
+            margin-bottom: 2.4rem;
         }
         &__icon {
-            width: 20px;
-            height: 20px;
+            width: 2rem;
+            height: 2rem;
         }
         &__desc {
             font-family: $titleFont;
             display: inline-block;
-            margin-left: 27px;
-            font-size: 13px;
+            margin-left: 2.7rem;
+            font-size: 1.3rem;
         }
         &__text {
             font-family: $textFont;
-            padding: 40px;
-            border-top: 1px solid $grey;
+            padding: 4rem;
+            border-top: 0.1rem solid $grey;
         }
     }
 }
@@ -339,11 +343,10 @@ ul {
 
         &-spec {
             flex-direction: row;
-            // padding: 50px 32px;
 
             &__list {
-                border-right: 1px solid $grey;
-                padding: 40px;
+                border-right: 0.1rem solid $grey;
+                padding: 4rem;
             }
             &__text {
                 width: 60%;
@@ -358,7 +361,7 @@ ul {
                 margin-bottom: 0;
             }
             &__col {
-                margin-right: 25px;
+                margin-right: 2.5rem;
                 margin-bottom: 0;
                 &:last-child{
                     margin-right: 0;
@@ -370,7 +373,7 @@ ul {
             flex-direction: row !important;
             &__col {
                 margin-bottom: 0 !important;
-                margin-right: 20px;
+                margin-right: 2rem;
                 flex: 1;
                 &:first-child {
                     margin-bottom: 0;

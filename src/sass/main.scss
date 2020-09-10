@@ -37,22 +37,17 @@ $textFont: "Lemonada", cursive;
     }
 }
 
+// font-size in rem
+html {
+    font-size: 62.5%;
+}
+
 html,
 body {
     height: 100%;
     box-sizing: border-box;
 }
 
-body {
-    font: 16px / 1.42 "Roboto", Arial, sans-serif;
-    // font-size: 16px;
-    // line-height: 1.42;
-    // font-family: "Roboto", Arial, sans-serif;
-    color: $black;
-    // Сглаживание шрифтов
-    -webkit-font-snoothing: antialiased;
-    -moz-osx-font-snoothing: grayscale;
-}
 ul {
     margin: 0;
     padding: 0;
@@ -61,19 +56,9 @@ ul {
     }
 }
 
-//     .wrapper {
-//     overflow: hidden;
-//     min-width: 1320px;
-// }
-// .container {
-//     margin: 0 auto;
-//     max-width: 1320px;
-// }
-
 .hero {
     position: relative;
-    // height: 100%;
-    margin-bottom: 150px;
+    margin-bottom: 15rem;
     min-height: 100vh;
     background: url(../images/hero-pic.jpg) center center / cover no-repeat;
     // background-image: url(../images/green.jpg);
@@ -82,27 +67,25 @@ ul {
     // background-repeat: no-repeat;
 
     .header {
-        margin: 0 auto 25px auto;
+        margin: 0 auto 2.5rem auto;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        margin-top: 95px;
-        .logo {
-            // margin-bottom: 25px;
-        }
+        margin-top: 9.5rem;
+
         .mail {
             text-decoration: none;
             text-align: center;
-            font-size: 16px;
+            font-size: 1.6rem;
             background: $black;
-            padding: 5px;
-            border-radius: 5px;
-            margin-top: 25px;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            margin-top: 2.5rem;
 
             &__title {
                 color: $yellow;
-                margin-bottom: 3px;
+                margin-bottom: 0.3rem;
             }
             &__contant {
                 background-color: $black;
@@ -119,36 +102,22 @@ ul {
         &__container {
             position: relative;
             width: 100%;
-            height: 600px;
+            height: 60rem;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        // &:before {
-        //     content: "";
-        //     display: block;
-        //     position: absolute;
-        //     width: 100%;
-        //     top: 75px;
-        //     left:0;
-        //     // height: auto;
-        //     // bottom: 10%;
-        //     // right: 0%;
-        //     background: url(../images/slider-pic.png) center left / contain no-repeat;
-        //     z-index: 100;
-        //     transform: rotate(-20deg);
-        // }
 
         &__item {
             opacity: 0;
             position: absolute;
-            top: 350px;
+            top: 35rem;
             width: 90%;
-            min-height: 500px;
+            min-height: 50rem;
             background: center center / contain no-repeat;
             font-weight: 900;
             text-transform: uppercase;
-            font-size: 20px;
+            font-size: 2rem;
             transition: opacity 1s;
             &--slide-first {
                 background-image: url(../images/slide-first.jpg);
@@ -178,10 +147,11 @@ ul {
                 align-items: flex-start;
                 line-height: 1;
                 color: $white;
-                font-size: 48px;
+                font-size: 4.8rem;
                 text-transform: uppercase;
+                font-family: $textFont;
                 &__word:nth-child(2n) {
-                    margin-left: 10px;
+                    margin-left: 1rem;
                 }
                 &__word {
                     background-color: $black;
@@ -201,16 +171,18 @@ ul {
         left: 0;
         top: 0;
         right: 0;
-        min-height: 75px;
+        height: 7.5rem;
         background: $black;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+
         &--opened {
             width: 100%;
             height: 100%;
             padding: 0 3% 0 4%;
+            transition: height 0.5s;
         }
         &--opened .sidebar__header {
             display: flex;
@@ -218,30 +190,35 @@ ul {
         &--opened .sidebar {
             position: absolute;
             width: 100%;
+            height: 100%;
             text-align: center;
         }
+        &__menu {
+            font-size: 3.5rem;
+            visibility: hidden;
+        }
+
         &--opened .sidebar__menu {
             text-align: center;
             white-space: nowrap;
-            transition: opacity 0.3s;
-            opacity: 1;
-        }
-        &__menu {
-            opacity: 0;
+            visibility: visible;
+            transition: visibility 0.6s;
         }
         &__hamburger {
+            z-index: 10;
             display: block;
             position: absolute;
-            top: 27px;
+            top: 2.7rem;
             left: 50%;
+            padding: 0.5rem 2rem 0.5rem 2rem;
             transform: translateX(-50%);
         }
         &--opened .sidebar__hamburger {
             display: none;
         }
         &__hamburger-icon {
-            width: 30px;
-            height: 30px;
+            width: 3rem;
+            height: 3rem;
             fill: $yellow;
             &:hover {
                 fill: $red;
@@ -252,13 +229,13 @@ ul {
         }
         &__close {
             position: absolute;
-            top: 0px;
-            right: 0px;
+            top: 0;
+            right: 0;
             cursor: pointer;
         }
         &__close-icon {
-            width: 30px;
-            height: 30px;
+            width: 3rem;
+            height: 3rem;
             fill: $yellow;
             &:hover {
                 fill: $red;
@@ -266,10 +243,10 @@ ul {
         }
         .side-menu {
             &__link {
-                font-size: 24px;
+                font-size: 2.4rem;
                 color: $yellow;
                 text-transform: uppercase;
-                font-family: $titleFont;
+                font-family: $textFont;
                 text-decoration: none;
                 &:hover {
                     color: $red;
@@ -280,15 +257,15 @@ ul {
 }
 
 .products {
-    margin-bottom: 160px;
+    margin-bottom: 16rem;
     .filter {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 100px;
+        margin-bottom: 10rem;
 
         &__item {
-            margin-right: 40px;
+            margin-right: 4rem;
 
             &--active .filter__link {
                 background-color: #000;
@@ -307,14 +284,14 @@ ul {
         &__link {
             text-transform: uppercase;
             font-family: $generalFont;
-            font-size: 18px;
-            padding: 5px 21px;
+            font-size: 1.8rem;
+            padding: 0.5rem 2.1rem;
             color: $black;
             font-weight: bold;
             display: inline-block;
             text-decoration: none;
             white-space: nowrap;
-            
+
             &:hover {
                 text-decoration: none;
                 color: $red;
@@ -326,16 +303,16 @@ ul {
         &__list {
             display: flex;
             flex-wrap: wrap;
-            margin-left: -27px;
+            margin-left: -2.7rem;
             justify-content: center;
         }
 
         &__item {
-            width: 300px;
-            height: 350px;
+            width: 30rem;
+            height: 35rem;
             background-color: $yellow;
-            margin-bottom: 35px;
-            margin-left: 27px;
+            margin-bottom: 3.5rem;
+            margin-left: 2.7rem;
 
             &--color-black {
                 background: url(../images/background-black.jpg) center center / cover no-repeat;
@@ -352,34 +329,33 @@ ul {
             &--color-yellow {
                 background: url(../images/background-yellow.jpg) center center / cover no-repeat;
             }
-            
+
             &--size-double {
-                width: 620px;
-                height: 544px;
+                width: 62rem;
+                height: 54rem;
             }
             position: relative;
         }
         // uneven price figure
         &__price {
             position: absolute;
-            left: -15px;
-            top: 15px;
-            width: 160px;
+            left: -1.5rem;
+            top: 1.5rem;
+            width: 16rem;
             // height: 160px; -noheight
-            border-bottom: 43px solid $black;
-            border-left: 5px solid transparent;
-            border-right: 2px solid transparent;
+            border-bottom: 4.3rem solid $black;
+            border-left: 5rem solid transparent;
+            border-right: 2rem solid transparent;
             transform: rotate(-182deg);
             font-family: $generalFont;
         }
         &__price-amount {
-            font-size: 30px;
+            font-size: 3rem;
             font-weight: bold;
             color: $white;
             transform: rotate(185deg);
             position: absolute;
             top: 0;
-            right: 25px;
         }
         &__content {
             height: 100%;
@@ -403,14 +379,14 @@ ul {
             align-items: center;
             position: absolute;
             color: $white;
-            font-size: 15px;
+            font-size: 1.5rem;
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 23px 35px;
+            padding: 2.3rem 3.5rem;
             background: rgba($color: #000000, $alpha: 0.5);
             font-family: $titleFont;
-            font-size: 22px;
+            font-size: 2.2rem;
             //start  hide description behind the visible part
             transform: translateY(100%);
             transition: transform 0.3s;
@@ -425,7 +401,7 @@ ul {
 
         &__desc--text {
             text-align: center;
-            margin-bottom: 18px;
+            margin-bottom: 1.8rem;
         }
         &__btn {
             @extend %button;
@@ -436,7 +412,7 @@ ul {
 }
 
 .collections {
-    margin-bottom: 135px;
+    margin-bottom: 13.5rem;
 
     &__list {
         display: flex;
@@ -445,8 +421,8 @@ ul {
     }
 
     &__item {
-        margin-bottom: 25px;
-        min-height: 474px;
+        margin-bottom: 2.5rem;
+        min-height: 47.4rem;
         flex: 1;
         overflow: hidden;
         background: url(../images/collections-pic-first.jpg) center left / cover no-repeat;
@@ -475,7 +451,7 @@ ul {
 
     &__link {
         display: block;
-        padding: 74px 13% 74px 44%;
+        padding: 7.4rem 13% 7.4rem 44%;
         text-decoration: none;
         color: inherit;
         height: 100%;
@@ -500,18 +476,18 @@ ul {
 
     &__title {
         font-family: $titleFont;
-        font-size: 70px;
+        font-size: 7rem;
         font-weight: bold;
         line-height: 1;
         text-transform: uppercase;
-        margin-bottom: 11px;
+        margin-bottom: 1.1rem;
     }
 
     &__desc {
         font-family: $generalFont;
-        font-size: 25px;
-        margin-bottom: 28px;
-        color:$black;
+        font-size: 2.5rem;
+        margin-bottom: 2.8rem;
+        color: $black;
         font-weight: bold;
     }
 
@@ -529,22 +505,22 @@ ul {
 }
 
 .footer {
-    margin-bottom: 115px;
+    margin-bottom: 11.5rem;
     display: flex;
     justify-content: space-between;
     .site-menu {
-        margin-bottom: 120px;
+        margin-bottom: 12rem;
         &-sections {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 0 75px;
+            padding: 0 7.5rem;
         }
         &__col {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 45px;
+            margin-bottom: 4.5rem;
         }
         &__col:last-child {
             // margin-bottom: 0;
@@ -552,22 +528,22 @@ ul {
 
         &__title {
             font-family: $titleFont;
-            font-size: 24px;
+            font-size: 2.4rem;
             font-weight: bold;
             color: $black;
             text-transform: uppercase;
-            margin-bottom: 24px;
+            margin-bottom: 2.4rem;
             white-space: nowrap;
         }
         &__item {
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
             &:last-child {
                 margin-bottom: 0;
             }
         }
         &__link {
             color: $black;
-            font-size: 15px;
+            font-size: 1.5rem;
             text-decoration: none;
             font-family: $textFont;
             &:hover {
@@ -575,14 +551,14 @@ ul {
             }
         }
         &__text {
-            font-size: 15px;
+            font-size: 1.5rem;
             color: $black;
-            margin-bottom: 30px;
+            margin-bottom: 3rem;
             &-row {
                 color: inherit;
                 text-decoration: none;
                 display: block;
-                margin-bottom: 5px;
+                margin-bottom: 0.5rem;
             }
         }
     }
@@ -590,8 +566,13 @@ ul {
     .extras {
         display: flex;
         flex-direction: column;
+        &__best {
+            font-size: 5rem;
+            font-weight: bold;
+            font-family: $generalFont;
+        }
         &__col {
-            margin-bottom: 25px;
+            margin-bottom: 2.5rem;
             &:last-child {
                 margin-bottom: 0;
             }
@@ -607,10 +588,10 @@ ul {
             text-align: center;
             color: $white;
             background: url(../images/background-black.jpg) center center / cover no-repeat;
-            font-size: 50px;
+            font-size: 5rem;
             font-weight: bold;
             font-family: $generalFont;
-            padding: 30px;
+            padding: 3rem;
             height: 100%;
             display: block;
             line-height: 1;
@@ -633,10 +614,10 @@ ul {
             height: 100%;
             justify-content: space-around;
             align-items: center;
-            padding: 20px 0;
+            padding: 2rem 0;
             &__link {
-                width: 20px;
-                height: 20px;
+                width: 2rem;
+                height: 2rem;
                 &:hover .socials__icon {
                     fill: $red;
                 }
@@ -648,10 +629,10 @@ ul {
                 fill: $black;
             }
             &__item {
-                width: 50px;
-                height: 50px;
+                width: 5rem;
+                height: 5rem;
                 // margin-right: 38px;
-                margin-bottom: 38px;
+                margin-bottom: 3.8rem;
                 &:last-child {
                     margin-bottom: 0;
                 }
@@ -672,21 +653,21 @@ ul {
     .hero {
         padding-left: 75px;
         .header {
-            margin-top: 10px;
+            margin-top: 1rem;
             flex-direction: row;
-            .mail{
+            .mail {
                 margin-top: 0;
             }
         }
 
         .sidebar {
             height: 100%;
-            width: 75px;
+            width: 7.5rem;
             transition-property: width;
             transition-duration: 0.7s;
 
             &--opened {
-                width: 350px;
+                width: 35rem;
                 height: 100%;
                 padding: 0 3% 0 4%;
             }
@@ -695,11 +676,11 @@ ul {
                 transition-delay: 0.7s;
             }
         }
-    .fade-slider {
-        &__text{
-            top:50%;
+        .fade-slider {
+            &__text {
+                top: 50%;
+            }
         }
-    }
     }
 }
 
@@ -712,7 +693,7 @@ ul {
 
         &__item {
             margin-bottom: 0;
-            margin-right: 30px;
+            margin-right: 3rem;
 
             &:last-child {
                 margin-right: 0;
